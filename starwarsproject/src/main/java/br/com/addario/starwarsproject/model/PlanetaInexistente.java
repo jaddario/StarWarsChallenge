@@ -1,4 +1,4 @@
-package br.com.addario.starwarsproject.pojo;
+package br.com.addario.starwarsproject.model;
 
 public class PlanetaInexistente extends Planeta{
 

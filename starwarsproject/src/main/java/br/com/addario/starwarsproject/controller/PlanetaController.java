@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.addario.starwarsproject.dao.PlanetaDao;
-import br.com.addario.starwarsproject.pojo.Planeta;
+import br.com.addario.starwarsproject.model.Planeta;
 import br.com.addario.starwarsproject.services.PlanetaService;
 
 @RestController
@@ -22,9 +21,6 @@ public class PlanetaController {
 
 	@Autowired
 	private PlanetaService service;
-
-	@Autowired
-	private PlanetaDao dao;
 
 	@PostMapping("/adicionaplaneta")
 	public Planeta adicionaPlaneta(@RequestBody Planeta planeta) {
@@ -46,7 +42,7 @@ public class PlanetaController {
 
 	@GetMapping(path = "/buscaplanetapornome/{nome}")
 	public ResponseEntity<Planeta> buscaPlanetaPorNome(@PathVariable String nome) {
-		return dao.buscaPlanetaPeloNome(nome).map(planeta -> ResponseEntity.ok().body(planeta))
+		return service.buscaPlanetaPeloNome(nome).map(planeta -> ResponseEntity.ok().body(planeta))
 				.orElse(ResponseEntity.notFound().build());
 	}
 

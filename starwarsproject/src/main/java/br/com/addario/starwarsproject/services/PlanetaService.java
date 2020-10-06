@@ -16,7 +16,7 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
 import br.com.addario.starwarsproject.interfaces.PlanetaRepository;
-import br.com.addario.starwarsproject.pojo.Planeta;
+import br.com.addario.starwarsproject.model.Planeta;
 
 @Service
 public class PlanetaService {
@@ -36,6 +36,9 @@ public class PlanetaService {
 
 	public Optional<Planeta> buscaPorId(long id) {
 		return planetaRepository.findById(id);
+	}
+	public Optional<Planeta> buscaPlanetaPeloNome(String nome) {
+		return planetaRepository.buscaPlanetaPeloNome(nome);
 	}
 
 	public void deleteById(long id) {

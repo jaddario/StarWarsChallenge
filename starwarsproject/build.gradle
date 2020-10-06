@@ -16,13 +16,25 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.h2database:h2'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+
 	testCompile group: 'org.springframework.restdocs', name: 'spring-restdocs-mockmvc', version: '1.0.0.RELEASE'
 	compile group: 'org.springframework', name: 'spring-test', version: '5.1.4.RELEASE'
 	compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.9.1'
 	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+
+	//Swagger
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
+
+	//Lombok	
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 		
 }
 
