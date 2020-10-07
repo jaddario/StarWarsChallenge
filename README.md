@@ -1,4 +1,5 @@
 # StarWarsChallenge
+Simples api para consulta de planetas do universo de Star Wars.
 
 ## Rodando a solução:
 
