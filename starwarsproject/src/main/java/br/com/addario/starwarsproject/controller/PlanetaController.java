@@ -24,7 +24,7 @@ public class PlanetaController {
 
 	@PostMapping("/adicionaplaneta")
 	public Planeta adicionaPlaneta(@RequestBody Planeta planeta) {
-		int numeroDeAparicoes = service.numeroDeAparicoes(planeta.getNome().toLowerCase());
+		int numeroDeAparicoes = service.retornaNumeroDeAparicoesEmFilmes(planeta.getNome());
 		planeta.setNumeroDeAparicoes(numeroDeAparicoes);
 		return service.adicionaPlaneta(planeta);
 	}
